@@ -20,7 +20,7 @@
 use PHPTool\SelectTree;
 ```
 ```
-//SelectTree 使用demo
+//SelectTree 使用案例
 public function stdemo()
 {
     $arr = array(
@@ -40,3 +40,4 @@ public function stdemo()
         $html .= $st->get_tree(0, $str, -1).'</select>';
         echo $html;
 }
+```
