@@ -1,14 +1,14 @@
 {
-  "name": "xiucaiwu/PHPTool",
+  "name": "xiucaiwu/tp5tool",
   "description": "The ThinkPHP5 Common Tool Classes",
   "keywords": [
     "PHPTool",
     "ThinkPHP5"
   ],
-  "homepage": "https://github.com/xiucaiwu/PHPTool",
+  "homepage": "https://github.com/xiucaiwu/tp5tool",
   "license": "MIT",
   "support": {
-    "source": "https://github.com/xiucaiwu/PHPTool"
+    "source": "https://github.com/xiucaiwu/tp5tool"
   },
   "authors": [
     {
