@@ -21,8 +21,9 @@ use PHPTool\SelectTree;
 use PHPTool\NodeTree;
 ```
 ```
-// SelectTree 使用案例
 // 使用场景,后台管理系统的菜单列表
+![菜单列表](https://github.com/xiucaiwu/tp5tool/blob/master/20180516133315.png)
+// SelectTree 使用案例
 public function stdemo()
 {
     $arr = array(
@@ -93,8 +94,9 @@ array(7) {
 </select>
 ```
 ```
-// NodeTree使用案例
 // 使用场景,后台管理系统的控制菜单
+![控制菜单](https://github.com/xiucaiwu/tp5tool/blob/master/20180516133410.png)
+// NodeTree使用案例
 public function ntdemo() {
         //原始数据, 从数据库读出
         $data = array(
