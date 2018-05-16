@@ -14,15 +14,14 @@
 > composer update xiucaiwu/tp5tool
 
 ## 使用
+
+SelectTree使用场景=>后台管理系统的菜单列表
 ![菜单列表](https://github.com/xiucaiwu/tp5tool/blob/master/screenshots/20180516133315.png)
+
 ```
 //引入类库
 use PHPTool\SelectTree;
-use PHPTool\NodeTree;
-```
-```
-// 使用场景,后台管理系统的菜单列表
-![菜单列表](https://github.com/xiucaiwu/tp5tool/blob/master/screenshots/20180516133315.png)
+
 // SelectTree 使用案例
 public function stdemo()
 {
@@ -44,8 +43,10 @@ public function stdemo()
         echo $html;
 }
 ```
-```
+
 // 输出
+
+```
 array(7) {
   [1] => array(3) {
     ["id"] => string(1) "1"
@@ -93,40 +94,47 @@ array(7) {
 <option value=5 >&nbsp; └─二级栏目三</option>
 </select>
 ```
-```
-// 使用场景,后台管理系统的控制菜单
+
+NodeTree使用场景=>后台管理系统的控制菜单
 ![控制菜单](https://github.com/xiucaiwu/tp5tool/blob/master/screenshots/20180516133410.png)
+
+```
+//引入类库
+use PHPTool\NodeTree;
+
 // NodeTree使用案例
 public function ntdemo() {
-        //原始数据, 从数据库读出
-        $data = array(
-            array(
-                'id'=>1,
-                'name'=>'book',
-                'parent_id'=>0
-            ),
-            array(
-                'id'=>2,
-                'name'=>'music',
-                'parent_id'=>0
-            ),
-            array(
-                'id'=>3,
-                'name'=>'book1',
-                'parent_id'=>1
-            ),
-            array(
-                'id'=>4,
-                'name'=>'book2',
-                'parent_id'=>3
-            )
-        );
-        $r = NodeTree::makeTree($data);
-        echo json_encode($r);
-    }
+	//原始数据, 从数据库读出
+	$data = array(
+		array(
+			'id'=>1,
+			'name'=>'book',
+			'parent_id'=>0
+		),
+		array(
+			'id'=>2,
+			'name'=>'music',
+			'parent_id'=>0
+		),
+		array(
+			'id'=>3,
+			'name'=>'book1',
+			'parent_id'=>1
+		),
+		array(
+			'id'=>4,
+			'name'=>'book2',
+			'parent_id'=>3
+		)
+	);
+	$r = NodeTree::makeTree($data);
+	echo json_encode($r);
+}
 ```
-```
+
 // 输出
+
+```
 [{
 	"id": 1,
 	"name": "book",
