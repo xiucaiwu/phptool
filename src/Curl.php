@@ -9,17 +9,17 @@ class Curl {
 
     /**
      * 
-     * @param type $method 请求方式
-     * @param type $url 地址
-     * @param type $fields 附带参数，可以是数组，也可以是字符串
-     * @param type $userAgent 浏览器UA
-     * @param type $httpHeaders header头部，数组形式
-     * @param type $username 用户名
-     * @param type $password 密码
-     * @return boolean
+     * @param string $method 请求方式
+     * @param string $url 地址
+     * @param mixed $fields 附带参数，可以是数组，也可以是字符串
+     * @param string $userAgent 浏览器UA
+     * @param array $httpHeaders header头部，数组形式
+     * @param string $username 用户名
+     * @param string $password 密码
+     * @return boolean|array
      */
     public static function execute($method, $url, $fields = '', $userAgent = '', $httpHeaders = '', $username = '', $password = '') {
-        $ch = $this->create();
+        $ch = self::create();
         if (false === $ch) {
             return false;
         }
@@ -80,16 +80,16 @@ class Curl {
 
     /**
      * 发送POST请求
-     * @param type $url 地址
-     * @param type $fields 附带参数，可以是数组，也可以是字符串
-     * @param type $userAgent 浏览器UA
-     * @param type $httpHeaders header头部，数组形式
-     * @param type $username 用户名
-     * @param type $password 密码
+     * @param string $url 地址
+     * @param mixed $fields 附带参数，可以是数组，也可以是字符串
+     * @param string $userAgent 浏览器UA
+     * @param array $httpHeaders header头部，数组形式
+     * @param string $username 用户名
+     * @param string $password 密码
      * @return boolean
      */
     public static function post($url, $fields, $userAgent = '', $httpHeaders = '', $username = '', $password = '') {
-        $ret = $this->execute('POST', $url, $fields, $userAgent, $httpHeaders, $username, $password);
+        $ret = self::execute('POST', $url, $fields, $userAgent, $httpHeaders, $username, $password);
         if (false === $ret) {
             return false;
         }
@@ -101,15 +101,15 @@ class Curl {
 
     /**
      * GET
-     * @param type $url 地址
-     * @param type $userAgent 浏览器UA
-     * @param type $httpHeaders header头部，数组形式
-     * @param type $username 用户名
-     * @param type $password 密码
+     * @param string $url 地址
+     * @param string $userAgent 浏览器UA
+     * @param array $httpHeaders header头部，数组形式
+     * @param string $username 用户名
+     * @param string $password 密码
      * @return boolean
      */
     public static function get($url, $userAgent = '', $httpHeaders = '', $username = '', $password = '') {
-        $ret = $this->execute('GET', $url, "", $userAgent, $httpHeaders, $username, $password);
+        $ret = self::execute('GET', $url, "", $userAgent, $httpHeaders, $username, $password);
         if (false === $ret) {
             return false;
         }
@@ -121,9 +121,9 @@ class Curl {
 
     /**
      * curl支持 检测
-     * @return boolean
+     * @return bool|null|resource
      */
-    public function create() {
+    private static function create() {
         $ch = null;
         if (!function_exists('curl_init')) {
             return false;

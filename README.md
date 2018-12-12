@@ -159,3 +159,31 @@ public function ntdemo() {
 	"leaf": true
 }]
 ```
+Curl使用场景
+
+```
+//引入类库
+use PHPTool\Curl;
+
+// Curl get使用案例
+public function get() {
+	echo Curl::get('www.baidu.com');
+}
+
+// Curl post使用案例
+public function post() {
+	$field = [
+		'p'		=> 1,
+		'time'	=> time(),
+	];
+	$userAgent = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36';
+	$httpHeaders = [
+		"Content-type: application/json;charset='utf-8'",
+　　	"Accept: application/json",
+　　	"Cache-Control: no-cache",
+　　	"Pragma: no-cache",
+	];
+	
+	echo Curl::post('http://www.ahlinux.com/', $field, $userAgent, $httpHeaders);
+}
+```
