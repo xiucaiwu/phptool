@@ -3,7 +3,7 @@
 
 ## 安装
 
-> composer require "xiucaiwu/tp5tool:dev-master"
+> composer require "xiucaiwu/tp5tool"
 
 ## 删除
 
