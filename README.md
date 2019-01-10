@@ -189,6 +189,7 @@ public function post() {
 ```
 ColorEchoTest使用场景:命令行
 ![控制菜单](https://github.com/xiucaiwu/phptool/blob/master/screenshots/20190110204946.png)
+
 ```
 //引入类库
 use PHPTool\ColorEcho;
