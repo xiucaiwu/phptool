@@ -67,8 +67,9 @@ class Curl {
         }
         $ret = curl_exec($ch);
         if (curl_errno($ch)) {
-            curl_close($ch);
-            return array(curl_error($ch), curl_errno($ch));
+            $error = array(curl_error($ch), curl_errno($ch));
+			curl_close($ch);
+			return $error;
         } else {
             curl_close($ch);
             if (!is_string($ret) || !strlen($ret)) {
