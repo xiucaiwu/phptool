@@ -1,22 +1,22 @@
-# tp5tool
+# phptool
 收集PHP常用的工具类,一个代码搬运工.
 
 ## 安装
 
-> composer require "xiucaiwu/tp5tool:dev-master"
+> composer require "xiucaiwu/phptool"
 
 ## 删除
 
-> composer remove xiucaiwu/tp5tool
+> composer remove xiucaiwu/phptool
 
 ## 更新
 
-> composer update xiucaiwu/tp5tool
+> composer update xiucaiwu/phptool
 
 ## 使用
 
 SelectTree使用场景=>后台管理系统的菜单列表
-![菜单列表](https://github.com/xiucaiwu/tp5tool/blob/master/screenshots/20180516133315.png)
+![菜单列表](https://github.com/xiucaiwu/phptool/blob/master/screenshots/20180516133315.png)
 
 ```
 //引入类库
@@ -96,7 +96,7 @@ array(7) {
 ```
 
 NodeTree使用场景=>后台管理系统的控制菜单
-![控制菜单](https://github.com/xiucaiwu/tp5tool/blob/master/screenshots/20180516133410.png)
+![控制菜单](https://github.com/xiucaiwu/phptool/blob/master/screenshots/20180516133410.png)
 
 ```
 //引入类库
@@ -173,17 +173,35 @@ public function get() {
 // Curl post使用案例
 public function post() {
 	$field = [
-		'p'		=> 1,
+		'p'	=> 1,
 		'time'	=> time(),
 	];
 	$userAgent = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36';
 	$httpHeaders = [
 		"Content-type: application/json;charset='utf-8'",
-　　	"Accept: application/json",
-　　	"Cache-Control: no-cache",
-　　	"Pragma: no-cache",
+		"Accept: application/json",
+		"Cache-Control: no-cache",
+		"Pragma: no-cache",
 	];
 	
 	echo Curl::post('http://www.ahlinux.com/', $field, $userAgent, $httpHeaders);
 }
+```
+ColorEcho使用场景:命令行
+![控制菜单](https://github.com/xiucaiwu/phptool/blob/master/screenshots/20190110204946.png)
+
+
+```
+//引入类库
+use PHPTool\ColorEcho;
+
+ColorEcho::info('Hello, world!');
+ColorEcho::warn('Hello, world!');
+ColorEcho::error('Hello, world!');
+ColorEcho::e('Hello, world!', "purple", "yellow");
+ColorEcho::e('Hello, world!', "blue", "light_gray");
+ColorEcho::e('Hello, world!', "red", "black");
+ColorEcho::e('Hello, world!', "cyan", "green");
+ColorEcho::e('Hello, world!', "cyan");
+ColorEcho::e('Hello, world!', null, "cyan");
 ```
